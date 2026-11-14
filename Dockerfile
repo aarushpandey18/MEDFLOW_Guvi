@@ -15,7 +15,7 @@ RUN mkdir -p /opt/tomcat \
        | tar -xz --strip-components=1 -C /opt/tomcat \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=build /app/target/medflow-1.0.0.war /opt/tomcat/webapps/medflow.war
+COPY --from=build /app/target/medflow-1.0.0.war /opt/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
