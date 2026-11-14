@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>MedFlow Clinic Management System</span>
+    <span>&copy; <span data-current-year>2026</span></span>
+  </div>
+</footer>

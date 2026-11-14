@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="${pageContext.request.contextPath}/index.jsp" aria-label="MedFlow dashboard">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" role="img">
+          <path d="M12 3h8v9h9v8h-9v9h-8v-9H3v-8h9V3Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand-name">MedFlow</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+      <a class="${activePage == 'dashboard' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/index.jsp">Dashboard</a>
+      <a class="${activePage == 'patients' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/patients">Patients</a>
+      <a class="${activePage == 'appointments' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/appointments">Appointments</a>
+    </nav>
+  </div>
+</header>
