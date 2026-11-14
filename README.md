@@ -24,3 +24,6 @@ Requires Java 25 or newer.
 
 ## Architecture
 JSP (view) <-> Servlet (controller) <-> Service (logic) <-> DAO (JDBC) <-> MySQL
+
+## Railway deployment
+The Docker deployment serves MedFlow from the root URL after Railway builds the latest `main` commit.
