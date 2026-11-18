@@ -1,15 +1,16 @@
 :root {
-  --color-primary: #2f67b1;
-  --color-primary-dark: #234e86;
-  --color-teal: #2f806f;
-  --color-background: #f3f5f2;
-  --color-surface: #ffffff;
-  --color-border: #dde3de;
-  --color-text: #26312b;
-  --color-muted: #667269;
-  --color-danger: #c62828;
-  --color-danger-soft: #fff5f5;
-  --shadow-card: 0 8px 28px rgba(38, 49, 43, 0.055);
+  --color-primary: #79a7ff;
+  --color-primary-dark: #a9c5ff;
+  --color-teal: #63c3b1;
+  --color-background: #101722;
+  --color-surface: #17212e;
+  --color-surface-raised: #1d2938;
+  --color-border: #293649;
+  --color-text: #edf3fb;
+  --color-muted: #aab6c5;
+  --color-danger: #ff8a8a;
+  --color-danger-soft: #34212a;
+  --shadow-card: 0 14px 34px rgba(0, 0, 0, 0.18);
   --radius: 10px;
 }
 
@@ -19,6 +20,7 @@
 
 html {
   min-width: 320px;
+  color-scheme: dark;
 }
 
 body {
@@ -37,7 +39,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(11, 94, 215, 0.3);
+  outline: 3px solid rgba(121, 167, 255, 0.32);
   outline-offset: 2px;
 }
 
@@ -202,7 +204,7 @@ select {
   right: -44px;
   width: 180px;
   height: 180px;
-  border: 26px solid #edf2ed;
+  border: 26px solid #202c3a;
   border-radius: 50%;
   content: "";
   pointer-events: none;
@@ -245,8 +247,8 @@ select {
   margin-bottom: 22px;
   place-items: center;
   color: var(--color-primary);
-  background: #edf3ea;
-  border: 1px solid #dee9df;
+  background: #213148;
+  border: 1px solid #30445f;
   border-radius: 8px;
 }
 
@@ -321,13 +323,13 @@ select {
   min-height: 44px;
   padding: 10px 12px;
   color: var(--color-text);
-  background: var(--color-surface);
-  border: 1px solid #d7dee7;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
 }
 
 .form-field input::placeholder {
-  color: #82909d;
+  color: #8492a3;
 }
 
 .form-actions {
@@ -355,11 +357,11 @@ select {
 }
 
 .button:hover {
-  background: #eef5ff;
+  background: #23344a;
 }
 
 .button--primary {
-  color: #fff;
+  color: #101722;
   background: var(--color-primary);
 }
 
@@ -388,21 +390,21 @@ select {
 }
 
 .alert--error {
-  color: #8e1c1c;
+  color: #ffc1c1;
   background: var(--color-danger-soft);
-  border-color: #e4a4a4;
+  border-color: #6d3b48;
 }
 
 .alert--info {
-  color: #084298;
-  background: #eef5ff;
-  border-color: #a8c7f5;
+  color: #b9d0ff;
+  background: #202f44;
+  border-color: #3b526f;
 }
 
 .alert--success {
-  color: #087568;
-  background: #effaf8;
-  border-color: #a4d9d2;
+  color: #afe7da;
+  background: #1d3533;
+  border-color: #365d56;
 }
 
 .table-wrap {
@@ -431,14 +433,14 @@ select {
   top: 0;
   z-index: 1;
   color: var(--color-muted);
-  background: #f7f9fb;
+  background: #1d2938;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .data-table tbody tr:nth-child(even) {
-  background: #fbfcfd;
+  background: #192431;
 }
 
 .data-table tbody tr:last-child td {
@@ -458,8 +460,8 @@ select {
   height: 32px;
   flex: 0 0 32px;
   place-items: center;
-  color: var(--color-primary-dark);
-  background: #dceaff;
+  color: #b9d0ff;
+  background: #263a55;
   border-radius: 50%;
   font-size: 0.8rem;
   font-weight: 700;
@@ -474,18 +476,18 @@ select {
 }
 
 .badge--booked {
-  color: #084298;
-  background: #dceaff;
+  color: #b9d0ff;
+  background: #263a55;
 }
 
 .badge--completed {
-  color: #087568;
-  background: #d9f3ee;
+  color: #afe7da;
+  background: #23433d;
 }
 
 .badge--cancelled {
-  color: #596674;
-  background: #e9edf0;
+  color: #c2ccd7;
+  background: #303b48;
 }
 
 .empty-state {
