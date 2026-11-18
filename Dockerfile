@@ -8,6 +8,7 @@ RUN mvn -B clean package -DskipTests
 FROM eclipse-temurin:25-jre
 
 ARG TOMCAT_VERSION=10.1.61
+LABEL medflow.theme="dark"
 RUN mkdir -p /opt/tomcat \
     && apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates curl tar \
