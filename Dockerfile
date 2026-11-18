@@ -23,4 +23,4 @@ RUN mkdir -p /opt/tomcat \
 COPY --from=build /app/target/medflow-1.0.0.war /opt/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["sh", "-c", "sed -i \"s/port=\\\"8080\\\"/port=\\\"${PORT:-8080}\\\"/\" /opt/tomcat/conf/server.xml && exec /opt/tomcat/bin/catalina.sh run"]
