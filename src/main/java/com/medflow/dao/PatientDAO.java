@@ -25,6 +25,10 @@ public class PatientDAO implements GenericDAO<Patient, Integer> {
                 return keys.next() ? keys.getInt(1) : -1;
             }
         } catch (SQLException e) {
+            if (e instanceof SQLIntegrityConstraintViolationException
+                    || e.getErrorCode() == 1062) {
+                throw new DatabaseException("A patient with this email already exists.", e);
+            }
             throw new DatabaseException("Could not save patient: " + e.getMessage(), e);
         }
     }

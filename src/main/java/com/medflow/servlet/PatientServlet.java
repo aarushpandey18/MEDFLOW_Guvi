@@ -30,11 +30,28 @@ public class PatientServlet extends HttpServlet {
             if ("delete".equals(action)) {
                 dao.delete(Integer.parseInt(req.getParameter("id")));
             } else {
+                String name = req.getParameter("name");
+                String email = req.getParameter("email");
+                String ageText = req.getParameter("age");
+                String phone = req.getParameter("phone");
+                if (name == null || name.isBlank()
+                        || email == null || email.isBlank()
+                        || ageText == null || ageText.isBlank()) {
+                    req.setAttribute("error", "Name, email, and age are required.");
+                    doGet(req, resp);
+                    return;
+                }
+                int age = Integer.parseInt(ageText);
+                if (age < 0 || age > 120) {
+                    req.setAttribute("error", "Age must be between 0 and 120.");
+                    doGet(req, resp);
+                    return;
+                }
                 Patient p = new Patient(0,
-                        req.getParameter("name"),
-                        req.getParameter("email"),
-                        Integer.parseInt(req.getParameter("age")),
-                        req.getParameter("phone"));
+                        name.trim(),
+                        email.trim(),
+                        age,
+                        phone == null ? "" : phone.trim());
                 dao.save(p);
             }
             resp.sendRedirect(req.getContextPath() + "/patients");

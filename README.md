@@ -27,3 +27,13 @@ JSP (view) <-> Servlet (controller) <-> Service (logic) <-> DAO (JDBC) <-> MySQL
 
 ## Render deployment
 The included `render.yaml` configures Render to build and run the Docker deployment. Set `DB_URL`, `DB_USER`, and `DB_PASS` in the Render service environment before deploying. Render provides the runtime `PORT` automatically.
+
+For Aiven MySQL, use the database name shown in Aiven (normally `defaultdb`):
+
+```text
+DB_URL=jdbc:mysql://YOUR-AIVEN-HOST:YOUR-AIVEN-PORT/defaultdb
+DB_USER=avnadmin
+DB_PASS=YOUR-AIVEN-PASSWORD
+```
+
+The application adds Aiven SSL settings automatically and initializes the required tables at startup.
