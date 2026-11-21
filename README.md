@@ -25,5 +25,5 @@ Requires Java 25 or newer.
 ## Architecture
 JSP (view) <-> Servlet (controller) <-> Service (logic) <-> DAO (JDBC) <-> MySQL
 
-## Railway deployment
-The Docker deployment serves MedFlow from the root URL after Railway builds the latest `main` commit. Railway supplies the runtime port through the `PORT` environment variable.
+## Render deployment
+The included `render.yaml` configures Render to build and run the Docker deployment. Set `DB_URL`, `DB_USER`, and `DB_PASS` in the Render service environment before deploying. Render provides the runtime `PORT` automatically.
